@@ -63,7 +63,7 @@ namespace WeatherForecast
                 }
                 
             }
-            Console.WriteLine("\nFiles updated successfully.\n\nKindly check the following path(output folder) for detailed weather records\n" + readDataFileUri + "/Prudentail_WeatherData");
+            Console.WriteLine("\nFiles updated successfully.\n\nKindly check the following path(output folder) for detailed weather records\n" + readDataFileUri + "\\Prudential_WeatherData");
             Console.ReadLine();
         }
 
@@ -117,7 +117,7 @@ namespace WeatherForecast
             foreach (string line in logFile)
             {
                 string[] temp = line.Split('=');
-                if (temp.Length >= 2)
+                if (temp.Length >= 2 && !lst.ContainsKey(temp[0]))
                 {
                     lst.Add(temp[0], temp[1]);
                 }
