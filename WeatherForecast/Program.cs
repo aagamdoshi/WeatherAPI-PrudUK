@@ -36,9 +36,10 @@ namespace WeatherForecast
                 try
                 {
                     string appId = ConfigurationManager.AppSettings["APPID"].ToString();
+                    string appURL = ConfigurationManager.AppSettings["APPURL"].ToString();
 
                     //Get response from WeatherRestAPI
-                    var uri = String.Format("http://api.openweathermap.org/data/2.5/forecast?id={0}&APPID={1}", cityId, appId);
+                    var uri = String.Format(appURL, cityId, appId);
                     HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
                     using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                     using (Stream stream = response.GetResponseStream())
