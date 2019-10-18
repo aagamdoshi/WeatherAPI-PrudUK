@@ -81,4 +81,6 @@ namespace WeatherForecast
         public Coord coord { get; set; }
         public string country { get; set; }
     }
+
+    
 }
